@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
@@ -37,8 +38,9 @@ fun HomeScreen(){
           fontStyle = FontStyle.Italic
       )
       Image(
-          painter = painterResource(R.drawable.home),
-          contentDescription = "home"
+          painter = painterResource(R.drawable.furniture3),
+          contentDescription = "home",
+
       )
       Text(
           text = "Welcome to my app"
@@ -59,8 +61,10 @@ fun HomeScreen(){
       Button(
           onClick = {},
           colors = ButtonDefaults.buttonColors(Color.Blue),
-          shape = RoundedCornerShape(10.dp)
-      )
+          shape = RoundedCornerShape(10.dp),
+          modifier = Modifier.fillMaxWidth().padding(start = 20.dp),
+
+          )
       { Text(text = "Add to cut") }
 
 

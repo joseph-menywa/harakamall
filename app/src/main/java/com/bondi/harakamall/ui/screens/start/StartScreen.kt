@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -58,19 +60,13 @@ fun StartScreen(){
 
             )
                 Text(text="E-commerce websites act as digital storefronts, enabling businesses to reach a wider audience and conduct transactions online.")
-        Button(
-            onClick = {},
-            colors = ButtonDefaults.buttonColors(Color.Blue),
-            shape = RoundedCornerShape(10.dp),
 
-            modifier = TODO(),
-            enabled = TODO(),
-            elevation = TODO(),
-            border = TODO(),
-            contentPadding = TODO(),
-            interactionSource = TODO(),
-            content = TODO()
-        )
+        Button(onClick = {},
+            colors = ButtonDefaults.buttonColors(Color.Blue),
+
+            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.fillMaxWidth().padding(start = 20.dp),
+            ) {Text(text = "More Products") }
 
 
 
