@@ -21,10 +21,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.bondi.harakamall.R
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen( navController: NavController){
   Column (
       modifier = Modifier.fillMaxSize()
   ) {
@@ -64,6 +66,7 @@ fun HomeScreen(){
           shape = RoundedCornerShape(10.dp),
           modifier = Modifier.fillMaxWidth().padding(start = 20.dp),
 
+
           )
       { Text(text = "Add to cut") }
 
@@ -72,7 +75,7 @@ fun HomeScreen(){
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview(){
-    HomeScreen()
+    HomeScreen(rememberNavController())
 
 
 }

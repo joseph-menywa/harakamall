@@ -9,7 +9,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
@@ -42,13 +44,15 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.bondi.harakamall.R
 import com.bondi.harakamall.ui.theme.neworange
 import com.bondi.harakamall.ui.theme.newwhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemScreen(){
+fun ItemScreen( navController: NavController){
     Column (modifier = Modifier.fillMaxSize(
 
     )
@@ -96,6 +100,9 @@ fun ItemScreen(){
         //End of SearchBar
         Spacer(modifier = Modifier.height(10.dp))
 
+    Column (modifier = Modifier.verticalScroll(rememberScrollState())) {
+
+
         //Start of Row
 
         Row (){
@@ -104,29 +111,32 @@ fun ItemScreen(){
                 contentDescription = "home",
                 modifier = Modifier.width(200.dp).height(200.dp).clip(shape = RoundedCornerShape(10.dp)),
                 contentScale = ContentScale.FillWidth,
-                )
+            )
 
             Spacer(modifier = Modifier.width(10.dp))
 
 
             Column {
-               Text(
-                   text = "Men's shirt",
-                   fontSize = 20.sp,
-                   fontWeight = FontWeight.ExtraBold,
+                Text(
+                    text = "Men's shirt",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.ExtraBold,
 
 
 
-                   )
+                    )
 
 
-               Text(text = "Casual Wear",
-                   fontSize = 20.sp,
-                   )
+                Text(text = "Casual Wear",
+                    fontSize = 20.sp,
+                )
 
-                Text(text = "Ksh 200",
+                Text(text = "Ksh 2000",
                     fontSize = 20.sp,
                     textDecoration = TextDecoration.LineThrough
+                )
+                Text(text = "1800",
+                    fontSize = 20.sp,
                 )
 
                 Row {
@@ -136,7 +146,10 @@ fun ItemScreen(){
                     Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
                     Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newwhite)
                 }
-                Button(onClick = {},
+                Button(onClick = {
+
+
+                },
                     colors = ButtonDefaults.buttonColors(Color.Blue),
 
                     shape = RoundedCornerShape(10.dp),
@@ -179,9 +192,13 @@ fun ItemScreen(){
                     fontSize = 20.sp,
                 )
 
+
                 Text(text = "Ksh 200",
                     fontSize = 20.sp,
                     textDecoration = TextDecoration.LineThrough
+                )
+                Text(text = "1800",
+                    fontSize = 20.sp,
                 )
 
                 Row {
@@ -238,6 +255,9 @@ fun ItemScreen(){
                     fontSize = 20.sp,
                     textDecoration = TextDecoration.LineThrough
                 )
+                Text(text = "1800",
+                    fontSize = 20.sp,
+                )
 
                 Row {
                     Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = neworange)
@@ -259,6 +279,8 @@ fun ItemScreen(){
         }
         //End of Row
 
+    }
+
 
 
 
@@ -272,7 +294,7 @@ fun ItemScreen(){
 @Preview(showBackground = true)
 @Composable
 fun ItemScreenPreview(){
-    ItemScreen()
+    ItemScreen(rememberNavController())
 
 
 }
